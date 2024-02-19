@@ -50,10 +50,10 @@ def _check_member(client, message):
       except UserNotParticipant:
         try:
           sent_message = message.reply_text(
-              "{}, you are **not subscribed** to my [channel](https://t.me/{}) yet. Please [join](https://t.me/{}) and **press the button below** to unmute yourself.".format(message.from_user.mention, channel, channel),
+              "{}, 📢 You are **not subscribed** To My [channel](https://t.me/{}) yet. Please [join](https://t.me/{}) and **press the button below** to unmute yourself.".format(message.from_user.mention, channel, channel),
               disable_web_page_preview=True,
               reply_markup=InlineKeyboardMarkup(
-                  [[InlineKeyboardButton("UnMute Me", callback_data="onUnMuteRequest")]]
+                  [[InlineKeyboardButton("🐣 UnMute Me", callback_data="onUnMuteRequest")]]
               )
           )
           client.restrict_chat_member(chat_id, user_id, ChatPermissions(can_send_messages=False))
@@ -61,7 +61,7 @@ def _check_member(client, message):
           sent_message.edit("❗ **I am not an admin here.**\n__Make me admin with ban user permission and add me again.\n#Leaving this chat...__")
           client.leave_chat(chat_id)
       except ChatAdminRequired:
-        client.send_message(chat_id, text=f"❗ **I am not an admin in @{channel}**\n__Make me admin in the channel and add me again.\n#Leaving this chat...__")
+        client.send_message(chat_id, text=f"❗ **I am not an admin in @{channel}**\n💸 Make me admin in the channel and add me again.\n🤙 I Am Leaving this chat...__")
         client.leave_chat(chat_id)
 
 
@@ -85,7 +85,7 @@ def config(client, message):
                 time.sleep(1)
           sent_message.edit('✅ **UnMuted all members who are muted by me.**')
         except ChatAdminRequired:
-          sent_message.edit('❗ **I am not an admin in this chat.**\n__I can\'t unmute members because i am not an admin in this chat make me admin with ban user permission.__')
+          sent_message.edit('❗ **I am not an admin in this chat.**\n__I can\'t unmute members because i am not an admin in this chat make me admin with ban user permission.\n\n😍 More Fast & Free Bots : @ProCoderZBots')
       else:
         try:
           client.get_chat_member(input_str, "me")
