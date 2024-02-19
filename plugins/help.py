@@ -46,7 +46,7 @@ def map(pos):
         button = [
             [InlineKeyboardButton(text = '📢 Update Channel', url="https://t.me/ProCoderZBots")],
             [InlineKeyboardButton(text = '🧑‍⚕️ Developer', url=url)],
-            [InlineKeyboardButton(text = '😍 Next', callback_data = f"help+{pos-1}")]
+            [InlineKeyboardButton(text = '📣 Back', callback_data = f"help+{pos-1}")]
         ]
     else:
         button = [
